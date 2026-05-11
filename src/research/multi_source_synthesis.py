@@ -2,7 +2,7 @@
 Multi-Source Data Synthesis Framework
 Handles cross-referencing, conflict resolution, and confidence scoring
 Implements institutional research standards from Bridgewater, Bloomberg, Kensho
-"""
+""" 
 
 from typing import Dict, List, Any, Tuple
 from dataclasses import dataclass
