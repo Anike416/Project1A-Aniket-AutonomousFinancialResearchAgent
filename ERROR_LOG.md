@@ -3,7 +3,7 @@
 **Project**: Autonomous Financial Research Agent with Multi-Source Synthesis  
 **Developer**: [Your Name]  
 **Project Code**: 1A  
-**Submission Date**: May 11, 2026  
+**Submission Date**: May 11, 2026   
 
 ---
 
