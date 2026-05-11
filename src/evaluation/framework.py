@@ -7,7 +7,7 @@ import json
 from src.config.logger import log
 from src.config.settings import settings
 from src.config.bedrock_client import BedrockClient
-
+ 
 
 class LLMEvaluator:
     """LLM-based evaluator using Amazon Nova Pro as a judge"""
