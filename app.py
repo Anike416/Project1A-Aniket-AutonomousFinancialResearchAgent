@@ -925,12 +925,12 @@ elif page == "🔍 Research":
                 with viz_col1:
                     st.markdown("#### Time-Series Analysis")
                     fig_ts = create_time_series_chart("Financial Metrics Over Time (from Report)", report)
-                    st.plotly_chart(fig_ts, use_container_width=True)
+                    st.plotly_chart(fig_ts, use_container_width=True, key="timeseries_chart")
                 
                 with viz_col2:
                     st.markdown("#### Growth Trends")
                     fig_growth = create_growth_rate_chart("Growth Rate Trends vs Industry", report)
-                    st.plotly_chart(fig_growth, use_container_width=True)
+                    st.plotly_chart(fig_growth, use_container_width=True, key="growth_chart")
                 
                 # Second row of visualizations
                 viz_col1, viz_col2 = st.columns(2)
@@ -938,13 +938,13 @@ elif page == "🔍 Research":
                 with viz_col1:
                     st.markdown("#### Competitive Comparison")
                     fig_comp = create_comparison_chart("Market Position & Performance Metrics", report)
-                    st.plotly_chart(fig_comp, use_container_width=True)
+                    st.plotly_chart(fig_comp, use_container_width=True, key="comparison_chart")
                 
                 with viz_col2:
                     st.markdown("#### Risk Assessment")
                     if findings.get("risks"):
                         fig_risk = create_risk_heatmap(findings["risks"], report)
-                        st.plotly_chart(fig_risk, use_container_width=True)
+                        st.plotly_chart(fig_risk, use_container_width=True, key="risk_chart")
                     else:
                         st.info("No risk data available for visualization")
                 
@@ -1232,7 +1232,11 @@ elif page == "📊 Evaluation":
                 st.metric("Challenges Run", completed)
             with col4:
                 evaluator = eval_results.get("evaluator_model", "Unknown")
-                st.metric("Evaluator", evaluator.split(":")[0][-10:] if evaluator else "N/A")
+                if evaluator and evaluator != "Unknown":
+                    model_name = evaluator.split(":")[0].split(".")[-1] if "." in evaluator else evaluator
+                    st.metric("Evaluator", model_name)
+                else:
+                    st.metric("Evaluator", "N/A")
             
             st.markdown("---")
             
@@ -1289,7 +1293,7 @@ elif page == "📊 Evaluation":
                                 height=400,
                                 title="Metrics Radar"
                             )
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig, use_container_width=True, key=f"metrics_radar_{i}")
                         
                         # Strengths and weaknesses
                         col1, col2 = st.columns(2)
@@ -1366,7 +1370,7 @@ elif page == "📈 Analytics":
             'Queries': [1, 2, 1, 3, 2, 4, 3, 5, 4, 6]
         })
         fig = px.line(data, x='Date', y='Queries', markers=True, title="Daily Query Volume")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="query_volume_chart")
     
     with col2:
         st.subheader("Model Performance")
@@ -1381,7 +1385,7 @@ elif page == "📈 Analytics":
         df_perf = pd.DataFrame(performance_data)
         fig = px.bar(df_perf, x='Model', y=['Accuracy', 'Speed', 'Cost Efficiency'],
                     barmode='group', title="Model Comparison Metrics")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="model_comparison_chart")
     
     st.markdown("---")
     st.subheader("📊 Evaluation Score Trends")
@@ -1395,7 +1399,7 @@ elif page == "📈 Analytics":
     
     fig = px.line(eval_data, x='Eval', y=['Overall', 'Accuracy', 'Quality'], 
                   markers=True, title="Improvement Trajectory")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key="eval_trends_chart")
 
 # PAGE: Model Configuration
 elif page == "🔧 Model Config":
@@ -1494,7 +1498,7 @@ elif page == "🔧 Model Config":
         fig = px.bar(df_comp.set_index('Capability'), 
                      title="Model Capability Comparison (Scale 0-10)",
                      barmode='group')
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="model_capability_chart")
 
 # PAGE: Settings
 elif page == "⚙️ Settings":
