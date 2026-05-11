@@ -1,5 +1,5 @@
 ## Investment Analysis Report: Apple vs Google (Q1 2026)
-
+ 
 ### Executive Summary
 This report provides a comprehensive investment analysis comparing Apple and Google's Q1 2026 earnings, valuation ratios, and growth catalysts. The objective is to determine which company presents a better investment opportunity based on the gathered data.
 
