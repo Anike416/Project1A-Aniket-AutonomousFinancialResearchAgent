@@ -2,7 +2,7 @@
 
 A fully autonomous AI agent that replicates the research workflow of a junior financial analyst using AWS Bedrock, LangChain, and advanced agentic AI patterns.
 
-## Overview
+## Overview 
 
 ARA-1 is a sophisticated financial research agent that:
 
