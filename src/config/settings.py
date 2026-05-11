@@ -4,7 +4,7 @@ AWS Bedrock and Application Configuration
 import os
 from pydantic_settings import BaseSettings
 from typing import Optional
-
+ 
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
