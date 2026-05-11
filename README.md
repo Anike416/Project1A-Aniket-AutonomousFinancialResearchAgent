@@ -317,6 +317,6 @@ For issues and questions:
 ## Acknowledgments
 
 - AWS Bedrock for LLM infrastructure
-- Claude 3 Sonnet for reasoning capabilities
+- Amazon Nova for reasoning capabilities
 - Pinecone for vector database services
 - LangChain for agent orchestration patterns
