@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+myenv/
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Streamlit
+.streamlit/
+.streamlit/config.toml
+
+# AWS & Credentials
+.aws/
+credentials.json
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# Data (if needed)
+*.csv
+*.xlsx
+data/downloads/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor backups
+*~
+*.bak
+
+# Project specific
+results/challenge_*.md
+output.txt
+*.pdf
+
+# Cache
+.cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3

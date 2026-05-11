@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  ara-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ara-agent
+    environment:
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - BEDROCK_MODEL_ID=anthropic.claude-3-sonnet-20240229-v1:0
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - LOG_LEVEL=INFO
+      - ENVIRONMENT=production
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    networks:
+      - ara-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  redis:
+    image: redis:7-alpine
+    container_name: ara-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - ara-network
+    restart: unless-stopped
+
+networks:
+  ara-network:
+    driver: bridge
+
+volumes:
+  redis-data:
