@@ -1,7 +1,7 @@
 """
 Core Autonomous Research Agent using ReAct pattern with AWS Bedrock
 Implements multi-source synthesis for institutional research standards
-"""
+""" 
 import asyncio
 import json
 from typing import Any, Dict, List, Optional, Tuple
