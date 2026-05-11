@@ -18,7 +18,7 @@ ARA-1 is a sophisticated financial research agent that:
 
 ### Core Components
 
-1. **Bedrock Agent**: AWS Bedrock-powered LLM orchestration using Claude 3 Sonnet
+1. **Bedrock Agent**: AWS Bedrock-powered LLM orchestration using Amazon Nova
 2. **Tool Registry**: Extensible tool system with automatic fallback chains
 3. **Memory System**:
    - Short-term: Current session context (managed in token window)
