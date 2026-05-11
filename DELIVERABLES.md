@@ -4,7 +4,7 @@
 
 ### Architecture & Framework
 - [x] ReAct (Reasoning + Acting) pattern implementation
-- [x] AWS Bedrock integration with Claude 3 Sonnet
+- [x] AWS Bedrock integration with Amazon Nova 
 - [x] Autonomous agent orchestration system
 - [x] Multi-threaded research execution
 - [x] Plan-and-Execute capability
